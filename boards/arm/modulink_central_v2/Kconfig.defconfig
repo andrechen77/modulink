@@ -1,0 +1,21 @@
+# stolen from https://github.com/zmkfirmware/zmk/blob/main/app/boards/arm/nice_nano/Kconfig.defconfig
+
+if BOARD_MODULINK_CENTRAL_V2
+
+config SOC_NRF52840_QIAA
+    default y
+
+config BOARD
+    default "ModuLink Central v2"
+
+if USB_DEVICE_STACK
+
+config USB_NRFX
+    default y
+
+endif # USB_DEVICE_STACK
+
+config BT_CTLR
+    default BT
+
+endif # BOARD_MODULINK_CENTRAL_V2

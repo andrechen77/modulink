@@ -1,0 +1,6 @@
+# Generated based on Zephyr board porting guide
+
+board:
+  name: modulink_central_v2
+  socs:
+    - name: nrf52840

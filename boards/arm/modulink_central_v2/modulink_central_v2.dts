@@ -1,0 +1,25 @@
+/* copied from https://github.com/zmkfirmware/zmk/blob/main/app/boards/arm/nice_nano/nice_nano_v2.dts */
+
+/dts-v1/;
+#include "modulink_central_v2.dtsi"
+
+/ {
+    aliases {
+        led0 = &blue_led;
+    };
+
+    chosen {
+        zmk,battery = &vbatt;
+    };
+
+    // Node name must match original "EXT_POWER" label to preserve user settings.
+    EXT_POWER {
+        compatible = "zmk,ext-power-generic";
+        control-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+        init-delay-ms = <50>;
+    };
+
+    vbatt: vbatt {
+        compatible = "zmk,battery-nrf-vddh";
+    };
+};
