@@ -88,7 +88,7 @@ static void bt_ready(int err) {
 
 	LOG_INF("Bluetooth initialized\n");
 
-	// hog_init();
+	hog_init();
 
 	// turned off with CONFIG_SETTINGS commented out
 	if (IS_ENABLED(CONFIG_SETTINGS)) {
@@ -116,7 +116,7 @@ int ble_init(void) {
 		LOG_INF("Bluetooth initialized\n");
 	}
 
-	// hog_button_loop();
+	hog_button_loop();
 	return 0;
 }
 
