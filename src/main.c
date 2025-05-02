@@ -10,8 +10,6 @@
 #include <zephyr/logging/log.h>
 #include <zephyr/usb/usb_device.h>
 
-#include "ble.h"
-
 LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
 int main(void) {
@@ -22,8 +20,6 @@ int main(void) {
 	usb_enable_ret = usb_enable(NULL);
 
 	LOG_INF("USB enabled: %d", usb_enable_ret);
-
-	ble_init();
 
 	while (1) {
 		LOG_DBG("heartbeat\n");

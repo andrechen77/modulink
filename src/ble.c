@@ -120,5 +120,5 @@ int ble_init(void) {
 	return 0;
 }
 
-// SYS_INIT(ble_init, APPLICATION, 50);
+SYS_INIT(ble_init, APPLICATION, 50);
 
