@@ -178,9 +178,7 @@ BT_GATT_SERVICE_DEFINE(hog_svc,
 		NULL, write_ctrl_point, &ctrl_point),
 	);
 
-void hog_init(void) {}
-
-void hog_button_loop(void) {
+void hog_main(void) {
 	for (;;) {
 		if (simulate_input) {
 			/* HID Report:

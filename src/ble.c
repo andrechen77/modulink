@@ -88,8 +88,6 @@ static void bt_ready(int err) {
 
 	LOG_INF("Bluetooth initialized\n");
 
-	hog_init();
-
 	// turned off with CONFIG_SETTINGS commented out
 	if (IS_ENABLED(CONFIG_SETTINGS)) {
 		LOG_DBG("Loading settings");
@@ -111,14 +109,9 @@ int ble_init(void) {
 	err = bt_enable(bt_ready);
 	if (err) {
 		LOG_ERR("Bluetooth init failed (err %d)\n", err);
-		return 0;
 	} else {
 		LOG_INF("Bluetooth initialized\n");
 	}
 
-	hog_button_loop();
-	return 0;
+	return err;
 }
-
-SYS_INIT(ble_init, APPLICATION, 50);
-
